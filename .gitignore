@@ -1,8 +1,5 @@
-
-build/Debug/GNU-Linux/src/main.o
-build/Debug/GNU-Linux/src/main.o
 *.o
-*.o
-*.o
+*.d
+*.mk
+*.xml
 dist/Debug/GNU-Linux/language0
-*.o
