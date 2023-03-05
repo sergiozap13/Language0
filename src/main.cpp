@@ -38,6 +38,9 @@ int main(int argc, char* argv[]) {
     cout << 6;
     
     cout << "Holaaaaaa";
+
+    cout << "Hola   aaaaa";
+
     // Read a text
     // Read a bigram (tex with two characters)
     

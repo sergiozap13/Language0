@@ -4,3 +4,5 @@ build/Debug/GNU-Linux/src/main.o
 *.o
 *.o
 *.o
+dist/Debug/GNU-Linux/language0
+*.o
