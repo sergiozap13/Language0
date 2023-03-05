@@ -13,6 +13,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>src/Bigram.cpp</itemPath>
       <itemPath>src/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -48,6 +49,8 @@
       </compileType>
       <item path="include/Bigram.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Bigram.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -72,6 +75,8 @@
         </asmTool>
       </compileType>
       <item path="include/Bigram.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Bigram.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
