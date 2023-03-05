@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/Prueba.o \
 	${OBJECTDIR}/src/main.o
 
 
@@ -61,6 +62,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/language0: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	g++ -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/language0 ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/src/Prueba.o: src/Prueba.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Iinclude -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Prueba.o src/Prueba.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
