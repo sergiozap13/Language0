@@ -11,42 +11,52 @@
  * Created on 5 de marzo de 2023, 13:44
  */
 
+#include <string>
+
 #include "Bigram.h"
 
 Bigram::Bigram(const std::string& text) {
+    this->_text = text;
 }
 
 Bigram::Bigram(char first, char second) {
+    // POR HACER
 }
 
 std::string Bigram::getText() const{
+    return this->_text;
 }
 
 std::string Bigram::toString() const{
-    
+    //POR HACER
 }
 
 const char& Bigram::at(int index) const{
-    
+    return _text[index];
 }
 
 char& Bigram::at(int index){
-    
+    return _text[index];
 }
 
 bool isValidCharacter(char character, const std::string& validCharacters){
-    /*
-    for(int i = 0; i < validCharacters.length(); i++){
+    int tam = validCharacters.length();
+    
+    for(int i = 0; i < tam; i++){
         if (character == validCharacters[i]){
             return true;
         }
     }
-    
     return false;
-     * 
-     * */
 }
 
 void toUpper(Bigram &bigram){
+    std::string bigram_text = bigram.getText();
+    int tam = bigram_text.length();
     
+    for (int i = 0; i < tam; i++){
+        if(islower(bigram.at(i))){
+            bigram.at(i) = std::toupper(bigram.at(i)); 
+        }
+    }
 }
