@@ -51,8 +51,7 @@ bool isValidCharacter(char character, const std::string& validCharacters){
 }
 
 void toUpper(Bigram &bigram){
-    std::string bigram_text = bigram.getText();
-    int tam = bigram_text.length();
+    int tam = bigram.getText().length();
     
     for (int i = 0; i < tam; i++){
         if(islower(bigram.at(i))){
