@@ -16,9 +16,11 @@
 #include "Bigram.h"
 
 Bigram::Bigram(const std::string& text) {
+    if (text.size() ==2){
     this->_text = text;
+    }
+    else this->_text ="__";
 }
-
 Bigram::Bigram(char first, char second) {
     std::string text = "";
     
@@ -41,7 +43,8 @@ std::string Bigram::getText() const{
 }
 
 std::string Bigram::toString() const{
-    //POR HACER
+    
+        //POR HACER
 }
 
 const char& Bigram::at(int index) const{
