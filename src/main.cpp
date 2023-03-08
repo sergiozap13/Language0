@@ -45,7 +45,8 @@ int main(int argc, char* argv[]) {
     // Probando método: 
     char a = 'b';
     char b = 'c';
-    
+    Bigram bi (a,b);
+    cout<< bi.getText();
     bool resultado = isValidCharacter(a, validCharacters);
     
     // Read a text

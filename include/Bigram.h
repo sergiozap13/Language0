@@ -5,7 +5,7 @@
 
 /** 
  * @file Bigram.h
- * @author Silvia Acid Carrillo <acid@decsai.ugr.es>
+ * @author Silvia Acid Carrillo <acid@decsai.ugr.e>s
  * @author Andrés Cano Utrera <acu@decsai.ugr.es>
  * @author Luis Castillo Vidal <L.Castillo@decsai.ugr.es>
  * 

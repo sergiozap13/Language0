@@ -20,6 +20,9 @@ Bigram::Bigram(const std::string& text) {
 }
 
 Bigram::Bigram(char first, char second) {
+    std::string text;
+    text= first + second;
+    this->_text = text;
     // POR HACER
 }
 
