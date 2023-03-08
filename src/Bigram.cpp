@@ -5,8 +5,8 @@
  */
 
 /* 
- * File:   Bigram.cpp
- * Author: sergio
+ * @file:   Bigram.cpp
+ * @author: sergio
  * 
  * Created on 5 de marzo de 2023, 13:44
  */
@@ -20,10 +20,11 @@ Bigram::Bigram(const std::string& text) {
 }
 
 Bigram::Bigram(char first, char second) {
-    std::string text;
-    text= first + second;
+    std::string text = "";
+    text += first;
+    text += second;
     this->_text = text;
-    // POR HACER
+    
 }
 
 std::string Bigram::getText() const{
