@@ -21,10 +21,19 @@ Bigram::Bigram(const std::string& text) {
 
 Bigram::Bigram(char first, char second) {
     std::string text = "";
+    
     text += first;
     text += second;
+    
     this->_text = text;
     
+    /*
+    std::string text(1, first);
+    
+    text += second;
+    
+    this->_text = text;
+    */
 }
 
 std::string Bigram::getText() const{
@@ -46,11 +55,10 @@ char& Bigram::at(int index){
 bool isValidCharacter(char character, const std::string& validCharacters){
     int tam = validCharacters.length();
     
-    for(int i = 0; i < tam; i++){
-        if (character == validCharacters[i]){
-            return true;
-        }
+    if (validCharacters.find(character) != std::string::npos){
+        return true;
     }
+    
     return false;
 }
 
