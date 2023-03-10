@@ -5,10 +5,7 @@
 
 /* 
  * File:   main.cpp
- * @author Silvia Acid Carrillo <acid@decsai.ugr.es>
- * @author Andrés Cano Utrera <acu@decsai.ugr.es>
- * @author Luis Castillo Vidal <L.Castillo@decsai.ugr.es>
- *
+ * @author Sergio Zapata De la Hoz <sergiozap@correo.ugr.es>
  * Created on 2 de febrero de 2023, 12:23
  */
 
@@ -32,17 +29,6 @@ using namespace std;
 //Includes de nuestras clases
 
 #include "Bigram.h"
-
-// Función para poner en minúscula un Bigrama
-void toLower(Bigram &bigram){
-    int tam = bigram.getText().length();
-    
-    for (int i = 0; i < tam; i++){
-        if(isupper(bigram.at(i))){
-            bigram.at(i) = std::tolower(bigram.at(i)); 
-        }
-    }
-}
 
 int main(int argc, char* argv[]) {
     // This string contains the list of characters that are considered as
@@ -72,7 +58,7 @@ int main(int argc, char* argv[]) {
     cout << endl;
     
     Bigram bigram1(a,b);
-    
+   
     // Find the bigrams in text and put them in an array of Bigrams
     
     // Declaramos un array de Bigramas con el tamaño de la longitud del texto. 
