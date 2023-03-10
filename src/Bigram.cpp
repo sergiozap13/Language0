@@ -6,7 +6,7 @@
 
 /* 
  * @file:   Bigram.cpp
- * @author: sergio
+ * @author: Sergio Zapata De la Hoz <sergiozap@correo.ugr.es>
  * 
  * Created on 5 de marzo de 2023, 13:44
  */
@@ -16,26 +16,18 @@
 #include "Bigram.h"
 
 Bigram::Bigram(const std::string& text) {
-    if (text.size() ==2){
-    this->_text = text;
+    if (text.size() == 2){
+        this->_text = text;
     }
     else this->_text ="__";
 }
+
 Bigram::Bigram(char first, char second) {
-    std::string text = "";
-    
-    text += first;
-    text += second;
-    
-    this->_text = text;
-    
-    /*
     std::string text(1, first);
     
     text += second;
     
     this->_text = text;
-    */
 }
 
 std::string Bigram::getText() const{
@@ -43,20 +35,28 @@ std::string Bigram::getText() const{
 }
 
 std::string Bigram::toString() const{
-    
-        //POR HACER
+    return this->_text;
 }
 
 const char& Bigram::at(int index) const{
-    return _text[index];
+    if(index < 0 || index > 2){
+        throw std::out_of_range("const char Bigram::at(int index) invalid position (" + std::to_string(index) + ")"
+                    + " and it can only be 0 or 1");
+    } else{
+        return _text[index];
+    }     
 }
 
 char& Bigram::at(int index){
-    return _text[index];
+    if(index < 0 || index > 2){
+        throw std::out_of_range("char Bigram::at(int index) invalid position (" + std::to_string(index) + ")"
+                    + " and it can only be 0 or 1");
+    } else{
+        return _text[index];
+    }
 }
 
 bool isValidCharacter(char character, const std::string& validCharacters){
-    int tam = validCharacters.length();
     
     if (validCharacters.find(character) != std::string::npos){
         return true;
@@ -71,6 +71,16 @@ void toUpper(Bigram &bigram){
     for (int i = 0; i < tam; i++){
         if(islower(bigram.at(i))){
             bigram.at(i) = std::toupper(bigram.at(i)); 
+        }
+    }
+}
+
+void toLower(Bigram &bigram){
+    int tam = bigram.getText().length();
+    
+    for (int i = 0; i < tam; i++){
+        if(isupper(bigram.at(i))){
+            bigram.at(i) = std::tolower(bigram.at(i)); 
         }
     }
 }
