@@ -5,10 +5,7 @@
 
 /** 
  * @file Bigram.h
- * @author Silvia Acid Carrillo <acid@decsai.ugr.e>s
- * @author Andrés Cano Utrera <acu@decsai.ugr.es>
- * @author Luis Castillo Vidal <L.Castillo@decsai.ugr.es>
- * 
+ * @author Sergio Zapata De la Hoz <sergiozap@correo.ugr.es>
  * Created on 2 February 2023, 11:00
  */
 
@@ -102,6 +99,12 @@ bool isValidCharacter(char character, const std::string& validCharacters);
  * @param bigram
  */
 void toUpper(Bigram &bigram);
+
+/**
+ * Converts uppercase letters in the given bigram to lowercase
+ * @param bigram
+ */
+void toLower(Bigram &bigram);
 
 #endif /* BIGRAM_H */
 
