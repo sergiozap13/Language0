@@ -29,7 +29,7 @@ char \& \mbox{\hyperlink{classBigram_a56175c243027c773f85cf4f1a73d766c}{at}} (in
 \doxysubsection{Detailed Description}
 It represents a pair of characters. It is used to store pairs of consecutive characters from a text. It uses a string to store the pair of characters. 
 
-Definition at line 26 of file Bigram.\+h.
+Definition at line 24 of file Bigram.\+h.
 
 
 
@@ -56,8 +56,8 @@ Definition at line 18 of file Bigram.\+cpp.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{18                                     \{}
-\DoxyCodeLine{19     \textcolor{keywordflow}{if} (text.size() ==2)\{}
-\DoxyCodeLine{20     this-\/>\_text = text;}
+\DoxyCodeLine{19     \textcolor{keywordflow}{if} (text.size() == 2)\{}
+\DoxyCodeLine{20         this-\/>\_text = text;}
 \DoxyCodeLine{21     \}}
 \DoxyCodeLine{22     \textcolor{keywordflow}{else} this-\/>\_text =\textcolor{stringliteral}{"{}\_\_"{}};}
 \DoxyCodeLine{23 \}}
@@ -87,21 +87,12 @@ Definition at line 25 of file Bigram.\+cpp.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{25                                       \{}
-\DoxyCodeLine{26     std::string text = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{26     std::string text(1, first);}
 \DoxyCodeLine{27     }
-\DoxyCodeLine{28     text += first;}
-\DoxyCodeLine{29     text += second;}
-\DoxyCodeLine{30     }
-\DoxyCodeLine{31     this-\/>\_text = text;}
-\DoxyCodeLine{32     }
-\DoxyCodeLine{33     \textcolor{comment}{/*}}
-\DoxyCodeLine{34 \textcolor{comment}{    std::string text(1, first);}}
-\DoxyCodeLine{35 \textcolor{comment}{    }}
-\DoxyCodeLine{36 \textcolor{comment}{    text += second;}}
-\DoxyCodeLine{37 \textcolor{comment}{    }}
-\DoxyCodeLine{38 \textcolor{comment}{    this-\/>\_text = text;}}
-\DoxyCodeLine{39 \textcolor{comment}{    */}}
-\DoxyCodeLine{40 \}}
+\DoxyCodeLine{28     text += second;}
+\DoxyCodeLine{29     }
+\DoxyCodeLine{30     this-\/>\_text = text;}
+\DoxyCodeLine{31 \}}
 
 \end{DoxyCode}
 
@@ -132,13 +123,18 @@ A reference to the character at the given position
 \end{DoxyReturn}
 
 
-Definition at line 54 of file Bigram.\+cpp.
+Definition at line 50 of file Bigram.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{54                          \{}
-\DoxyCodeLine{55     \textcolor{keywordflow}{return} \_text[index];}
-\DoxyCodeLine{56 \}}
+\DoxyCodeLine{50                          \{}
+\DoxyCodeLine{51     \textcolor{keywordflow}{if}(index < 0 || index > 2)\{}
+\DoxyCodeLine{52         \textcolor{keywordflow}{throw} std::out\_of\_range(\textcolor{stringliteral}{"{}char Bigram::at(int index) invalid position ("{}} + std::to\_string(index) + \textcolor{stringliteral}{"{})"{}}}
+\DoxyCodeLine{53                     + \textcolor{stringliteral}{"{} and it can only be 0 or 1"{}});}
+\DoxyCodeLine{54     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{55         \textcolor{keywordflow}{return} \_text[index];}
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{57 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}\label{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}} 
@@ -166,13 +162,18 @@ A const reference to the character at the given position
 \end{DoxyReturn}
 
 
-Definition at line 50 of file Bigram.\+cpp.
+Definition at line 41 of file Bigram.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{50                                      \{}
-\DoxyCodeLine{51     \textcolor{keywordflow}{return} \_text[index];}
-\DoxyCodeLine{52 \}}
+\DoxyCodeLine{41                                      \{}
+\DoxyCodeLine{42     \textcolor{keywordflow}{if}(index < 0 || index > 2)\{}
+\DoxyCodeLine{43         \textcolor{keywordflow}{throw} std::out\_of\_range(\textcolor{stringliteral}{"{}const char Bigram::at(int index) invalid position ("{}} + std::to\_string(index) + \textcolor{stringliteral}{"{})"{}}}
+\DoxyCodeLine{44                     + \textcolor{stringliteral}{"{} and it can only be 0 or 1"{}});}
+\DoxyCodeLine{45     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{46         \textcolor{keywordflow}{return} \_text[index];}
+\DoxyCodeLine{47     \}     }
+\DoxyCodeLine{48 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classBigram_ae8a73bc031d48028abea3a78ecbd61b0}\label{classBigram_ae8a73bc031d48028abea3a78ecbd61b0}} 
@@ -190,13 +191,13 @@ The text of this bigram as a string object
 \end{DoxyReturn}
 
 
-Definition at line 42 of file Bigram.\+cpp.
+Definition at line 33 of file Bigram.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{42                                \{}
-\DoxyCodeLine{43     \textcolor{keywordflow}{return} this-\/>\_text;}
-\DoxyCodeLine{44 \}}
+\DoxyCodeLine{33                                \{}
+\DoxyCodeLine{34     \textcolor{keywordflow}{return} this-\/>\_text;}
+\DoxyCodeLine{35 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}\label{classBigram_a7a782c0fe5764cd4d42427fa284b79d1}} 
@@ -214,13 +215,13 @@ The text of this bigram as a string object
 \end{DoxyReturn}
 
 
-Definition at line 46 of file Bigram.\+cpp.
+Definition at line 37 of file Bigram.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{46                                 \{}
-\DoxyCodeLine{47     \textcolor{keywordflow}{return} this-\/>\_text;}
-\DoxyCodeLine{48 \}}
+\DoxyCodeLine{37                                 \{}
+\DoxyCodeLine{38     \textcolor{keywordflow}{return} this-\/>\_text;}
+\DoxyCodeLine{39 \}}
 
 \end{DoxyCode}
 

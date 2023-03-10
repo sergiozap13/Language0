@@ -13,13 +13,16 @@ class \mbox{\hyperlink{classBigram}{Bigram}}
 bool \mbox{\hyperlink{Bigram_8h_afe6e716ad7a25257188a41370600dfad}{is\+Valid\+Character}} (char character, const std\+::string \&valid\+Characters)
 \item 
 void \mbox{\hyperlink{Bigram_8h_a266a0facf51f64c3bfca9611665803af}{to\+Upper}} (\mbox{\hyperlink{classBigram}{Bigram}} \&bigram)
+\item 
+void \mbox{\hyperlink{Bigram_8h_a7aebe26f16110cd390ecfa0c4becabe7}{to\+Lower}} (\mbox{\hyperlink{classBigram}{Bigram}} \&bigram)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-@author1 Silvia Acid Carrillo $<$\href{mailto:acid@decsai.ugr}{\texttt{ acid@decsai.\+ugr}}.e$>$s @author2 Andrés Cano Utrera \href{mailto:acu@decsai.ugr.es}{\texttt{ acu@decsai.\+ugr.\+es}}
+\begin{DoxyAuthor}{Author}
+Sergio Zapata De la Hoz \href{mailto:sergiozap@correo.ugr.es}{\texttt{ sergiozap@correo.\+ugr.\+es}} Created on 2 February 2023, 11\+:00 
+\end{DoxyAuthor}
 
-Created on 2 February 2023, 11\+:00 
 
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{Bigram_8h_afe6e716ad7a25257188a41370600dfad}\label{Bigram_8h_afe6e716ad7a25257188a41370600dfad}} 
@@ -40,12 +43,11 @@ true if the given character is contained in {\ttfamily valid\+Characters}; false
 \end{DoxyReturn}
 
 
-Definition at line 58 of file Bigram.\+cpp.
+Definition at line 59 of file Bigram.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{58                                                                        \{}
-\DoxyCodeLine{59     \textcolor{keywordtype}{int} tam = validCharacters.length();}
+\DoxyCodeLine{59                                                                        \{}
 \DoxyCodeLine{60     }
 \DoxyCodeLine{61     \textcolor{keywordflow}{if} (validCharacters.find(character) != std::string::npos)\{}
 \DoxyCodeLine{62         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
@@ -53,6 +55,34 @@ Definition at line 58 of file Bigram.\+cpp.
 \DoxyCodeLine{64     }
 \DoxyCodeLine{65     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
 \DoxyCodeLine{66 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Bigram_8h_a7aebe26f16110cd390ecfa0c4becabe7}\label{Bigram_8h_a7aebe26f16110cd390ecfa0c4becabe7}} 
+\index{Bigram.h@{Bigram.h}!toLower@{toLower}}
+\index{toLower@{toLower}!Bigram.h@{Bigram.h}}
+\doxysubsubsection{\texorpdfstring{toLower()}{toLower()}}
+{\footnotesize\ttfamily void to\+Lower (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBigram}{Bigram}} \&}]{bigram }\end{DoxyParamCaption})}
+
+Converts uppercase letters in the given bigram to lowercase 
+\begin{DoxyParams}{Parameters}
+{\em bigram} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file Bigram.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78                             \{}
+\DoxyCodeLine{79     \textcolor{keywordtype}{int} tam = bigram.\mbox{\hyperlink{classBigram_ae8a73bc031d48028abea3a78ecbd61b0}{getText}}().length();}
+\DoxyCodeLine{80     }
+\DoxyCodeLine{81     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < tam; i++)\{}
+\DoxyCodeLine{82         \textcolor{keywordflow}{if}(isupper(bigram.\mbox{\hyperlink{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}{at}}(i)))\{}
+\DoxyCodeLine{83             bigram.\mbox{\hyperlink{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}{at}}(i) = std::tolower(bigram.\mbox{\hyperlink{classBigram_ae653a8bb70d1f0f8ddde88196ef51564}{at}}(i)); }
+\DoxyCodeLine{84         \}}
+\DoxyCodeLine{85     \}}
+\DoxyCodeLine{86 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{Bigram_8h_a266a0facf51f64c3bfca9611665803af}\label{Bigram_8h_a266a0facf51f64c3bfca9611665803af}} 

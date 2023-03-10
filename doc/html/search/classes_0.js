@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bigram_7',['Bigram',['../classBigram.html',1,'']]]
+  ['bigram_8',['Bigram',['../classBigram.html',1,'']]]
 ];
