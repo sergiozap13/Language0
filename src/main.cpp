@@ -36,44 +36,43 @@ int main(int argc, char* argv[]) {
     // separators
     
     const std::string validCharacters = "abcdefghijklmnopqrstuTvwxyz\xE0\xE1\xE2\xE3\xE4\xE5\xE6\xE7\xE8\xE9\xEA\xEB\xEC\xED\xEE\xEF\xF0\xF1\xF2\xF3\xF4\xF5\xF6\xF8\xF9\xFA\xFB\xFC\xFD\xFE\xFF";
-    cout << validCharacters << endl << endl;
+    //cout << validCharacters << endl << endl;
     
     // Read a text
     
     // Leemos el texto del cual vamos a extraer los bigramas
-    string input = "";
-    cout << "Introduce a text: ";
-    cin >> input; 
+    string cadena1 = "";
+    cout << "Enter a text: ";
+    cin >> cadena1; 
     
     // Read a bigram (text with two characters)
     
     // Leemos el bigrama a buscar
-    char a, b;
+    string cadena2 = "";
     
-    cout << "Introduce the first character: ";
-    cin >> a; 
-    cout << "Introduce the second character: ";
-    cin >> b;
+    // Validación de que la cadena a buscar va a tener 2 caracteres
+    do{
+        cout << "Enter the pair of characters to search: ";
+        cin >> cadena2;
+    } while(cadena2.length() != 2);
     
-    cout << endl;
-    
-    Bigram bigram1(a,b);
+    Bigram bigram1(cadena2);
    
     // Find the bigrams in text and put them in an array of Bigrams
     
     // Declaramos un array de Bigramas con el tamaño de la longitud del texto. 
-    Bigram bigrams[input.length()];
+    Bigram bigrams[cadena1.length()];
     
     int tam_bigrams = 0;
     int i = 0;
     
     // Recorremos el texto 
-    while(i <= input.length()){
+    while(i <= cadena1.length()){
         // Si los dos caracteres consecutivos están presentes en el validCharacters: 
-        if(isValidCharacter(input[i],validCharacters) && isValidCharacter(input[i+1], validCharacters)){
+        if(isValidCharacter(cadena1[i],validCharacters) && isValidCharacter(cadena1[i+1], validCharacters)){
             // Se añaden al vector de Bigramas
-            bigrams[tam_bigrams].at(0) = input[i];
-            bigrams[tam_bigrams].at(1) = input[i+1];
+            bigrams[tam_bigrams].at(0) = cadena1[i];
+            bigrams[tam_bigrams].at(1) = cadena1[i+1];
             tam_bigrams++;
         } else 
             i++; // En caso de no tener dos caracteres válidos consecutivos        
@@ -94,7 +93,7 @@ int main(int argc, char* argv[]) {
  
        cout << endl;
        
-    // Convert to uppercase the bigrams in the array that are equals to input bigram
+    // Convert to uppercase the bigrams in the array that are equals to cadena1 bigram
  
     // Recorremos todo el vector
     for(int i = 0; i < tam_bigrams; i++){
