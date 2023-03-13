@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
     
     // Leemos el texto del cual vamos a extraer los bigramas
     string cadena1 = "";
-    cout << "Enter a text: ";
+    cout << "Enter a text: " << endl;
     cin >> cadena1; 
     
     // Read a bigram (text with two characters)
@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
     
     // Validación de que la cadena a buscar va a tener 2 caracteres
     do{
-        cout << "Enter the pair of characters to search: ";
+        cout << "Enter the pair of characters to search: " << endl;
         cin >> cadena2;
     } while(cadena2.length() != 2);
     
