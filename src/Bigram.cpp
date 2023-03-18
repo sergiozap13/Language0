@@ -39,7 +39,7 @@ std::string Bigram::toString() const{
 }
 
 const char& Bigram::at(int index) const{
-    if(index < 0 || index > 2){
+    if(index < 0 || index > 1){
         throw std::out_of_range("const char Bigram::at(int index) invalid position (" + std::to_string(index) + ")"
                     + " and it can only be 0 or 1");
     } else{
@@ -48,7 +48,7 @@ const char& Bigram::at(int index) const{
 }
 
 char& Bigram::at(int index){
-    if(index < 0 || index > 2){
+    if(index < 0 || index > 1){
         throw std::out_of_range("char Bigram::at(int index) invalid position (" + std::to_string(index) + ")"
                     + " and it can only be 0 or 1");
     } else{
